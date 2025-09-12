@@ -1,0 +1,312 @@
+	
+*) Advance java :
+ 
+
+
+
+
+
+
+
+
+Diff bet core and Advance java ?
+
+core :
+
+ core java contains version like as J2SE(java 2 standard edition).
+ used for desktop or standalone applications.
+ we learn basic fundamentals concepts of java programming.
+ single tier architecture.
+ in core java we can develope desktop base or CMD base Applications.
+
+Advance : 
+
+in advance java contains version like as J2EE(java 2 enterprise edition).
+used for web and enterprise application i.e server side applications.
+we learn advance concepts like as web & enterprise technologies.
+two tier architecture (client-server-architecture).
+in advance java we can develope web applications & enterprise applications.
+
+
+What i Provide :
+ 
+- Servlet 
+- JSP => Introductory 
+- Spring (IOC,MVC,AOP)and its(Annotations)
+- Spring Boot => restful API
+- Maven, Gradle - project management tool : 
+- Spring MVC (Model View Controller) design pattern : 
+- Hibernate 
+
+- we conduct test Test 1,2 ,3 
+- Daily practise is required 
+- All questions are given & answers 
+
+Summary and Interview Questions :
+what is difference bet core java and Advance java ?
+
+
+
+	
+2 JDBC Drivers
+
+What is Database Driver?
+Database driver
+	- A software that enables java application to interact with database. It is simple carrier to connect your java application to data base. Where driver is act like bridge between any application to db that store the data into database.Here 4 different
+
+
+ Types of driver 
+
+	1 Type I --- Jdbc Odbc Bridge Driver
+			JDBC -> java database connectivity (Design by sunmicrosystem)
+			odbc -> Open database connectivity (Design by windows microsoft)
+			- Here ODBC is only windows specific os it is not used for any other OS, so it is removed support in java 7, in the previous version it has support 
+			
+	2 Type II --- JDBC - Native API 		
+		
+			- Here we avoid ODBC instead of we use vendor specific driver 
+			- In this type finally removed OS dependancy.
+			- But this vendor specific driver has to be installed on all system 
+			Partially in C & Java --- Vendor specific
+		- e.g. Oracle OCI driver -- but now outdated.
+		
+	3 Type III --- JDBC network protocol driver
+
+		- In this type initially we installed our API on server and that server will transform your api to client machine
+		- When someone is connected to this server through the internet a small copy of API is sending to respective client machine.
+		- Basically it is indirectly installed that API in your machine through network so it is called network protocol driver.
+		- Here Type 2 API driver is running on server and whenever you give the request to server it transform that API in your machine and installed it.
+	
+		Middleware driver
+		- e.g. WebLogic RMI driver
+		
+	4 Type IV --- Jdbc thin / Universal driver  // thread safe 
+
+
+		- It is not used any middleware driver to connect the DB
+		- It is Two step process 
+		  1st step is Java code -> type 4 and 
+		  2nd step is type 4 to database & vice versa
+	
+		Fully in Java -- Portable -- Vendor specific
+		- e.g. MySQL Connector (mysql-connector-x.y.z.jar) , Oracle thin driver (ojdbcx.jar), Driver url is 
+			Mysql => com.mysql.cj.jdbc.Driver
+			Oracle => oracle.jdbc.OracleDriver
+	 
+
+ 
+ - JDBC Steps:
+		1. Load & register driver class.
+
+			Class.ForName("com.mysql.cj.jdbc.Driver");
+			
+			static{
+			.....
+			}
+			
+			{
+				
+			}
+			
+		2. Get JDBC Connection (using DriverManager).
+
+			jdbc:mysql://localhost:3306/emplyee, root ,root 
+
+		3. Create JDBC statement (SQL query).
+
+            1) Statement 
+            2) PreparedStatment 
+
+		4. Execute the query and collect result.
+
+			- SELECT ---> executeQuery() -- ResultSet (rows & cols)
+			OR          ---- > execute();
+			- Non-SELECT --> executeUpdate() -- int (affected rows).
+		5. Close all.
+
+s.close();
+s.commit();
+s.rollback();
+		
+- JDBC objects:
+		1. Driver ---> Create socket connection with database & authenticate. Should be registered with DriverManager.Managing a set of JDBC Driver(oracle/mysql/nosql etc.) 
+		2. Connection ---> Encapsulate socket connection & used for creating statements and managing transactions.
+		3. Statement ---> Reresents SQL query. Can be DDL, DML or DQL.
+			-- PreparedStatement -- For executing parameterized queries.
+				e.g. INSERT INTO DEPT VALUES(?,?,?);			
+		4. ResultSet ---> Like a cursor in RDBMS. Used to access records/rows one by one.
+
+
+
+MySQL Driver Connection -:
+String DB_DRIVER = "com.mysql.cj.jdbc.Driver";
+String DB_URL = "jdbc:mysql://localhost:3306/emp161db";
+String DB_USER = "root";
+String DB_PASSWORD = "root";
+
+
+
+Oracle Driver Connection -:
+String DB_DRIVER = "oracle.jdbc.OracleDriver";
+String DB_URL = "jdbc:oracle:thin:@localhost:1521:XE";
+String DB_USER = "hr";
+String DB_PASSWORD = "hr";
+
+	
+
+summary & Interview Questions
+
+1 How to Create Table Using mysql query?
+2 Write down the query for add data into table
+3 Which query is used to update data into table ?
+4 Explain JDBC Drivers?
+
+
+ Today's Lecture Agenda : 
+
+
+* Types of Drivers :
+4 types :
+
+1) JDBC-ODBC Bridge database driver / single Threaded.
+2) jdbc native api
+3) jdbc network protocol
+4) thin/universal Driver
+
+
+
+
+      
+
+Today's Lecture Agenda
+
+
+*) What is JDBC :
+
+1)jdbc stand for java database connectivity.
+2)jdbc is an API (Application Programming Interface) for java.
+3)Which is used connect java Application to the database by using JDBC Driver.
+4)it is an interaction with the database to retrieve, manipulate, and process the data using of SQL.
+5)also jdbc API  is used to access tabular data stored in relational databases like as MySQL, oracle etc.
+
+
+1 JDBC Connectivity : 
+
+firstly we need to add the jar(MySQL connector 8).
+
+1) Register and Load the Driver Class.
+2) Get JDBC Connection.
+3) Create JDBC statement through the sql queries. (used Statement or PreparedStatement)
+4) Execute the query and collect the Result.
+5) Close all the Connection. 
+
+
+*) JDBC Driver or Database Driver:
+
+A database Driver is an Software compoment that enables the java applications to interact with database.
+it is simple carrier to connect your java application to the database.
+where Driver is act like as Bridge between any application to database that stores the data into database.
+also jdbc Driver is type of database driver designed for java applications.
+
+there are 4 types of Drivers:
+
+1) JDBC-ODBC Bridge database driver / single Threaded.
+2) jdbc native api
+3) jdbc network protocolw
+4) thin/universal Driver
+
+
+*) DriverManager class :
+
+Jdbc DriverManager is an class in java.
+which is present in java sql package.
+it is used to establish the connection between database and Driver.  
+the DriverManager class is acts like as an interface between the User and Driver.
+it contains several methods to keep the interactions between the User and Driver like as GetConnection() ...
+
+
+*) Connection interface :
+
+Connection is interface which is present in java sql package.
+the connection interface maintain a session with the database, it can be used for transaction management.
+it provides the factory methods that returns the instance of Statement and Preparedstatement.
+it also provides methods for Trasactions management such as commit(),rollback() etc ...
+
+
+PreparedStatement extends Statement {
+
+}
+
+
+2 What is Statement interface ?
+
+- Statement is an interface that present in java.sql.* package.
+- Its main purpose to represents SQL Statement & execute query with the database.
+- It compiled & execute every time for each query
+- it is used when sql query is to be executed only once.
+- you cannot pass the paramenter at runtime.
+- it is base interface.
+- used to execute normal sql queries.
+- performance is very low.
+- it is used for DDL statement.
+- in statement may be possibility of sql injection attacks.
+- It contains different methods like execute(),executeQuery(),executeUpdate().
+	
+
+	- Each methods has its own functionality :
+
+- execute() methods used to perform DDL oeprations like create,drop,and truncate the table & it returns only boolean value either true or false to validate table status changes.
+
+- executeQuery() methods used to perform DQL operations like select table data & it returns ResultSet Object, with the help of ResultSet Object we can get data from database
+
+- executeUpdate() methods used to perform DML operations like insert, delete & update & it returns a interger value. That meaning is row is upadated successfully.
+
+	
+3) PreparedStatement interface :
+
+- PreparedStatement is an interface that present in java.sql.* package
+- PreparedStatement is a subclass of Statement, it can do what a Statement can do, plus more
+- PreparedStatement Object represents a precompiled SQL statement. Means When PreparedStatement is created, the SQL query is passed as a parameter. This Prepared Statement contains a pre-compiled SQL query, so you can be be used to execute the statement multiple times.
+- it is used when sql queries is to be executed multiple times.
+- you can pass parameter at runtime.
+- it extends statement interface.
+- it is used to execute dynamic sql queries.
+- performance is better than statements.
+- it is used for any sql query.
+- in preparedstatement there is no possibility of sql injections attacks.
+- it contains same methods as statement like as execute(),executeQuery(),executeUpdate().
+
+
+ResultSet interface :
+
+- it is an interface present in java sql package.
+- it represent that database resultset.
+- the Resultset objects represent a row of a table.
+- by using the next() method we fetch the data one by one.
+- the return type of the next() method is Boolean.
+- A resultset always maintain the connection with database.
+- it cannot be serialize.
+
+RowSet Interface :
+
+- it is an interface present in java sql package.
+- jdbc rowset is wrapper of resultset.
+- it holds tabular data like resultset, but it is easy and flexible to used.
+- a rowset can be connected/disconnected from the database.
+- rowset objects can be serialize.
+
+
+summary & Interview Questions :
+
+ What is Difference Betn Core java & Advance java?
+ What is JDBC /What are the jdbc API Components /Explain the steps of JDBC connectivity /Difference betn jdbc and odbc?
+ What is Driver & types of Drivers?
+ how to handle the Exception in jdbc ?
+ What is the purpose of Class.forName() method?
+ What is Connection , DriverManager ?
+ What is Statement / PreparedStatement / Difference between Statement and PreparedStatement / types of Statements.
+ What is ResultSet / RowSet?
+ Diff betn execute(),executeupdate()and executeQuery().
+ 
+ 
+
