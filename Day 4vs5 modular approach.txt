@@ -1,0 +1,39 @@
+
+Last Lecture Agenda :
+
+
+
+Todays Lecture Agenda : 
+
+1 Modular Approach :
+
+The modular approach in Java is a way to design software by breaking it into independent modules, or parts, that can communicate with each other through an interface.
+This approach can help make software more maintainable, reusable, and easier to update.
+
+2 Implementation of Dao (DATA ACCESS LAYER/OBJ)
+
+The DAO pattern is an approach to organize the database Connection layer in an application, separating data access operations from business logic.
+ 
+ Dao Class = Database connection information
+ Service Class = business logic
+ Controller Class = calling functionality 
+
+Flow of Executions :
+
+Controller receives the request and sends data to the Service layer.
+Service applies business logic and calls the DAO.
+DAO interacts with the database and returns the result to the Service.
+Service formats the result and sends it to the Controller.
+Controller returns the final result to the User.
+
+
+summary & Interview Questions
+
+1 Explain Modular Approach
+2 How to Implementation of Dao
+4 Explain the flow of the Execution
+
+Homework :
+
+Use this (DAO)Pattern and perform CRUD Operations by Statement & PreparedStatement.
+ 
