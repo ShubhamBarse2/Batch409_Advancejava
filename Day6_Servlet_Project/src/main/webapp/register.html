@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Employee Form</title>
+</head>
+<body>
+  <h1>Employee Details</h1>
+
+  <form action="register" method="post" >
+    <div>
+      <label for="empName">Employee Name</label><br />
+      <input id="empName" name="empName" type="text" required />
+    </div>
+
+    <div>
+      <label for="department">Department</label><br />
+      <input id="department" name="department" type="text" required />
+    </div>
+
+    <div>
+      <label for="email">Email</label><br />
+      <input id="email" name="email" type="email" required />
+    </div>
+
+    <div>
+      <label for="mobNo">Mobile Number</label><br />
+      <input id="mobNo" name="mobNo" type="tel" pattern="[0-9]{10}" title="Enter a 10-digit number" required />
+    </div>
+
+    <div>
+      <label for="password">Password</label><br />
+      <input id="password" name="password" type="password" required />
+    </div>
+<br><br>
+    <div>
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+</body>
+</html>
