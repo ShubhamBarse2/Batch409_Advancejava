@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+
+	<!-- <bean class="com.tka.Employee"> <property name="empId" value="123"></property> 
+		<property name="empName" value="suraj"></property> <property name="Salary" 
+		value="4LPA"></property> </bean> -->
+
+	<bean id="emp" class="com.entities.Employee">
+
+		<constructor-arg index="0" value="12">
+		</constructor-arg>
+		<constructor-arg index="1" value="rahul">
+		</constructor-arg>
+		<constructor-arg index="2" value="23LPA">
+		</constructor-arg>
+		<constructor-arg index="3" ref="c">
+		</constructor-arg>
+
+	</bean>
+
+	<bean id="c" class="com.entities.Country">
+
+		<constructor-arg index="0" value="91">
+		</constructor-arg>
+		<constructor-arg index="1" value="IND">
+		</constructor-arg>
+
+	</bean>
+
+
+
+</beans>
